@@ -1,5 +1,10 @@
 let app = new Vue({
   el: "#app",
+
+  created: function () {
+    setInterval(this.nextImg, 3000);
+  },
+
   data: {
     counter: 0,
     images: [
@@ -9,6 +14,7 @@ let app = new Vue({
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg"
     ]
   },
+
   methods: {
     nextImg() {
       this.counter++;
@@ -16,7 +22,6 @@ let app = new Vue({
         this.counter = 0;
       }
     },
-
     prevImg() {
       this.counter--;
       if (this.counter < 0) {
