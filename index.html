@@ -15,16 +15,13 @@
                     <i @click="prevImg" class="fas fa-angle-left"></i>
                 </div>
                 <div class="images">
-                    <img class="active first" :src="images[counter]">
+                    <img class="active" :src="images[counter]">
                 </div>
                 <div class="next">
                     <i @click="nextImg" class="fas fa-angle-right"></i>
                 </div>
                 <div class="nav">
-                    <i class="fas fa-circle active first"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle last"></i>
+                    <i :class="(index ===counter) ? 'active' : ''" class="fas fa-circle" v-for ="(img, index) in images"></i>
                 </div>
             </div>
         </div>
