@@ -12,10 +12,16 @@ let app = new Vue({
   methods: {
     nextImg() {
       this.counter++;
+      if (this.counter === this.images.length) {
+        this.counter = 0;
+      }
     },
 
     prevImg() {
       this.counter--;
+      if (this.counter == 0) {
+        this.counter = this.images.length -1;
+      }
     }
   }
 })
